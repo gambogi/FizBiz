@@ -1,0 +1,44 @@
+\begin{problem}{\problemnum} 
+Let $L$ be the line that passes through the points $\begin{pmatrix}-2\\1\\1\\0\end{pmatrix}$ and $\begin{pmatrix}5\\10\\-1\\4\end{pmatrix}$.
+    \begin{enumerate}
+        \item Find the vector equation of line $L$.
+        \item Does the point $\begin{pmatrix}1\\0\\2\\1\end{pmatrix}$ lie on the line. Give reasons.
+        \item Find the equation of a line that passes through the origin and is orthogonal to $L$. How many such distinct lines are possible?
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}
+        \item
+            \begin{align*}
+                A = \vvvv{-2}{1}{1}{0},
+                B = \vvvv{5}{10}{-1}{4},
+                \bv = B - A = \vvvv{7}{9}{-2}{4}
+                \\\\
+                L = \vvvv{-2}{1}{1}{0}
+                  + t\vvvv{7}{9}{-2}{4},
+                  \forall t \in \bbR
+            \end{align*}
+        \item
+            \begin{proof}\begin{align*}
+                \vvvv{1}{0}{2}{1} = \vvvv{-2 + 7t}{1 + 9t}{1 - 2t}{4t}
+                \\
+                \implies \frac{3}{7} = t = \frac{-1}{9}
+                \\
+                \text{Contradiction.}
+                \\
+                \vvvv{1}{0}{2}{1} \notin L
+            \end{align*}\end{proof}
+        \item
+            \begin{align*}
+                \text{Let $\bu$ be the direction vector in:}\\
+                M &= \vvvv{0}{0}{0}{0} + s\vvvv{x}{y}{z}{w}
+                \\
+                \bu \cdot \bv = 0 \implies 7\bx + 9\by -2\bz + 4\bw
+                \\
+                \text{One solution: }
+                \\
+                \vvvv{x}{y}{z}{w} = \vvvv{1}{-1}{1}{1}
+            \end{align*}
+            Only one unique solution exists.
+    \end{enumerate}
+\end{solution}

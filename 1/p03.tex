@@ -1,0 +1,41 @@
+\begin{problem}{\problemnum \, \textsf{(POOLE 1.2.48)}}
+    Find all values of the scalar $k$ for which the two
+    vectors are orthagonal
+    \[ \bu = \vect{2}{3},
+        \bv = \vect{k + 1}{k - 1}
+    \]
+\end{problem}
+\begin{solution}\\
+    In $\mathbb{R}^2$:
+    \[ \frac{\bu \cdot \bv}
+            {\norm*{\bu} \norm*{\bv}}
+        = \cos(\pi/2)
+        = 0
+        \implies \bu \text{ is perpendicular to } \bv
+    \]
+    Reifiying, we have:
+    \begin{align*}
+        \frac{\vect{2}{3} \cdot \vect{k+1}{k-1}}
+             {\norm*{\vect{2}{3}}\norm*{\vect{k+1}{k-1}}} &= 0
+        \\\\
+        \frac{2k + 2 + 3k - 3}
+             {\sqrt{13}\sqrt{(k + 1)^{2} + (k - 1)^{2}}} &= 0
+        \\\\
+        \frac{5k - 1}
+             { \sqrt{13}\sqrt{2k^{2} + 2}} &= 0
+        \\\\
+        \frac{5k - 1}
+             {\sqrt{2}\sqrt{13}\sqrt{k^2 + 1}} &= 0
+        \\\\
+        \frac{5k - 1}
+             {\sqrt{k^2 + 1}} &= 0
+        \\\\
+        \frac{5k}{\sqrt{k^2 + 1}}
+        &=
+        \frac{1}{\sqrt{k^2 + 1}}
+        \\\\
+        5k &= 1
+        \\\\
+        k &= \frac{1}{5}
+    \end{align*}
+\end{solution}

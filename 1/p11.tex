@@ -1,0 +1,48 @@
+\begin{problem}{\problemnum} 
+Let $\bu=\begin{pmatrix}
+                 1 \\
+                 1 \\
+                 1  \\
+                 \vdots \\
+                 1
+               \end{pmatrix}$ and $\bv=\begin{pmatrix}
+                 1 \\
+                 2 \\
+                 3  \\
+                 \vdots \\
+                 n
+               \end{pmatrix}$
+               be two vectors in $\bbR^n$. Let $\theta_n$ be the angle between $\bu$ and $\bv$ in $\bbR^n$.
+               \begin{enumalph}
+                \item Find $\theta_n$.
+                \item What will be $\lim_{n \to \infty} \theta_n$? Give a mathematical justification.
+               \end{enumalph}
+\end{problem}
+\begin{solution}
+
+\begin{align*}
+    \cos(\theta_{n}) = \frac{\bu \cdot \bv}{\norm{\bu}\norm{\bv}}
+    \\\\
+    \bu \cdot \bv = 1(1) + 2(1) + ... + n(1) 
+                  = 1 + 2 + ... + n
+                  = \frac{n(n+1)}{2}
+   \\\\
+   \norm{\bu} = \sqrt{1^2 + ... + 1^2} = \sqrt{n}
+   \\\\
+   \norm{\bv} = \sqrt{1^2 + 2^2 + ... + n^2}
+   = \sqrt{\frac{n(n+1)(2n+1}{6}}
+   \\\\
+   \cos(\theta_{n}) = \frac{\frac{n(n+1)}{2}}{\sqrt{n}\sqrt{\frac{n(n+1)(2n+1}{6}}}
+   \\\\
+   \cos(\theta_{n}) = \frac{\sqrt{6}}{2}\sqrt{\frac{n+1}{2n+1}}
+   \\\\
+   \theta_{n} = \cos^{-1}(\frac{\sqrt{6}}{2}\sqrt{\frac{n+1}{2n+1}})
+   \\\\
+   \lim_{n\to\inf}\cos^{-1}( \frac{\sqrt{6}} {2} \sqrt{\frac{n+1} {2n+1}}) &= \cos^{-1}\frac{\sqrt{6}}{2\sqrt{2}}
+   \\
+   &= \cos^{-1}\frac{\sqrt{3}}{2} 
+   \\
+   &= \frac{\pi}{6}
+\end{align*}
+
+\end{solution}

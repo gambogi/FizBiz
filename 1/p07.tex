@@ -1,0 +1,55 @@
+\begin{problem}{\problemnum} 
+Let $\bu, \bv, \bw$ be vectors such that $\norm{\bu}=1, \norm{\bv}=2$ and $\norm{\bw}=3$, $\bu$ is orthogonal to $\bv$, and that the angle between $\bu$ and $\bw$ is $\pi/3$ and that between $\bv$ and $\bw$ is $\pi/6$. Find $\norm{\bu+\bv+\bw}$.
+\end{problem}
+\begin{solution}\\
+    Solving for $\bu \cdot \bv$:
+    \begin{align*}
+        & \frac{\bu \cdot \bv}
+               {\norm{\bu}\norm{\bv}} = 0 = \cos(\frac{\pi}{2})
+        \\
+        \implies& \bu \cdot \bv = 0
+    \end{align*}
+    Solving for $\bu \cdot \bw$:
+    \begin{align*}
+        & \frac{\bu \cdot \bw}
+        {\norm{\bu}\norm{\bw}} = \frac{1}{2} = \cos(\frac{\pi}{3})
+        \\
+        \implies& \bu \cdot \bw = \frac{3}{2}
+    \end{align*}
+    Solving for $\bu \cdot \bw$:
+    \begin{align*}
+        & \frac{\bv \cdot \bw}
+        {\norm{\bv}\norm{\bw}} = \frac{\sqrt{3}}{2} = \cos(\frac{\pi}{6})
+        \\
+        \implies& \bv \cdot \bw = 3\sqrt{3}
+    \end{align*}
+    Rewriting $\norm{\bu+\bv+\bw}$
+    \begin{align*}
+        & \norm{\bu+\bv+\bw}
+        \\
+        =& \sqrt{(\bu+\bv+\bw) \cdot (\bu+\bv+\bw)}
+        \\
+        =& \sqrt{\bu \cdot (\bu+\bv+\bw)
+                      + \bv \cdot (\bu+\bv+\bw)
+                      + \bw \cdot (\bu+\bv+\bw)}
+        \\
+        =& \sqrt{\bu \cdot \bu
+                      + \bv \cdot \bv
+                      + \bw \cdot \bw
+                      + 2(\bu \cdot \bv)
+                      + 2(\bu \cdot \bw)
+                      + 2(\bv \cdot \bw)}
+        \\
+        =& \sqrt{\norm{\bu}^{2}
+                      + \norm{\bv}^{2}
+                      + \norm{\bw}^{2}
+                      + 2(\bu \cdot \bv)
+                      + 2(\bu \cdot \bw)
+                      + 2(\bv \cdot \bw)}
+        \\
+        =& \sqrt{1^2 + 2^2 + 3^2 + 2(0) + 2(3/2) + 2(3\sqrt{3})}
+        \\
+        =& \sqrt{17+6\sqrt{3}}
+    \end{align*}
+
+\end{solution}

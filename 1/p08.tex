@@ -1,0 +1,39 @@
+\begin{problem}{\problemnum} 
+Let $A$ and $B$ be the endpoints of a diameter of a circle and $O$ be the center (without the loss of generality we can place it at the origin). Suppose $C$ is any point on the circle (see the figure below). Let the position vectors of $A$ be $\ba$ and that of $C$ be $\bc$. Using this prove that $\angle ACB$ is a right angle. \textsf{Hint:} Try to express the vectors $\overrightarrow{AC}$ and $\overrightarrow{CB}$ in terms of $\ba$ and $\bc$.\\
+\begin{tikzpicture}
+    \draw[thick] (0,0) circle (30pt);
+    \draw (-1.05,0) -- (1.05,0);
+    \draw (-1.05,0) -- (-0.5,0.925) --(1.05,0);
+    \node[style=blk, label=left:$A$](A) at (-1.055,0){};
+    \node[style=blk, label=right:$B$](B) at (1.055,0){};
+    \node[style=blk, label=above:$C$](C) at (-.5,0.926){};
+    \node[style=blk, label=below:$O$](O) at (0,0){};
+    \draw[->-=0.5] (O) to (A);
+    \draw[->-=0.5] (O) to (C);
+    \node (a) at (-0.55,-0.2) {$\scriptstyle \ba$};
+    \node (c) at (-0.45,0.4) {$\scriptstyle \bc$};
+\end{tikzpicture}
+\end{problem}
+\begin{solution}
+    \begin{proof}
+        \[\norm{\ba} = \norm{\bb} = \norm{\bc}\]
+        \[\overrightarrow{AC} = \ba - \bc\]
+        \[\overrightarrow{CB} = \bc + \ba\]
+        \[\cos(\angle ABC) = \frac{(\ba - \bc) \cdot (\bc + \ba)}
+                                  {\norm{\ba - \bc}\norm{\bc + \ba}}
+                              \]
+        \[\cos(\angle ABC) = \frac{(\ba \cdot \ba - \bc \cdot \bc)}
+                                  {\norm{\ba - \bc}\norm{\bc + \ba}}
+        \]
+        \[\cos(\angle ABC) = \frac{\norm{\ba}^2 - \norm{\bc}^2}
+                                  {\norm{\ba - \bc}\norm{\bc + \ba}}
+        \]
+        \[\cos(\angle ABC) = \frac{0}
+                                  {\norm{\ba - \bc}\norm{\bc + \ba}}
+        \]
+        \[\cos(\angle ABC) = 0\]
+        \[\angle ABC = \frac{\pi}{2}\]
+        $\angle ABC$ must be perpendicular.
+
+    \end{proof}
+\end{solution}

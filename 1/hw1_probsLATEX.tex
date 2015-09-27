@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+\usepackage{aaHWbeginner}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usetikzlibrary{shapes,arrows,matrix,decorations.markings}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+%%the \circled command has been used to create text inside circle for grading table.
+\tikzstyle{blk}=[circle,inner sep=0pt,minimum size =2pt,draw,fill=black,line width=0.8pt]
+\tikzstyle{blanknode}=[circle,inner sep=2pt,minimum size =8pt,draw,line width=0.8pt]
+%%following is to have a directed edge with arrow anywhere in between, name of the style is ->- and it requres an input for the position of the arrow.
+%%requires decorations.markings library
+%% example usgae \draw[->-=0.5] (0,0) to [bend left] (2,4);
+%% see http://tex.stackexchange.com/questions/39278/tikz-arrowheads-in-the-center
+\tikzset{->-/.style={decoration={markings,mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+
+
+%%%\geometry{letterpaper, textwidth=17cm, textheight=22cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% THE FOLLOWING IS FOR THE COVER SHEET--FILL IN appropriately%%
+\newcommand{\mycourse}{MATH-241}
+\newcommand{\semesteryear}{Fall 2015}
+\newcommand{\myname}{Matthew Gambogi}
+\newcommand{\hwnumber}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% cover sheet preamble ends here
+
+% following counter is to automate the numbering of the problems
+\newcounter{Quesnumb}  % creates the counter
+\setcounter{Quesnumb}{0} % sets a specific value to the counter
+% the following new command can be used to increment and print the counter
+% http://chenfuture.wordpress.com/2007/12/31/a-simple-counter/
+\newcommand{\problemnum}{%
+            \addtocounter{Quesnumb}{1}%
+            \arabic{Quesnumb}}
+
+
+\title{\textbf{\mycourse} \hfill Homework \hwnumber \hfill \textbf{\semesteryear}} %% DO NOT type in HW number here
+\author{\myname}
+\date{ \textbf{DUE DATE Sep 03, 2015 by 11:00PM (in \textsc{Dropbox})}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0pt} %% paragraphs will not be indented
+\setlength{\parskip}{.25cm} %% space between paragraphs
+\linespread{1.1}
+
+\begin{document}
+\thispagestyle{empty} %%this is to supress the page number on the cover page
+\include{hwcover} %% make sure you have the file "hwcover.tex" in the same folder as your actual homework file
+\renewcommand{\arraystretch}{1} %% this is to make sure that array stretch in "hwcover" is nuetralized.
+
+\clearpage %% these are to reset the page number for the first page of your homework to 1.
+\pagenumbering{arabic} %% these are to reset the page number for the first page of your homework to 1.
+\maketitle
+
+% Use the ``problem'' environment for questions and the ``solution'' environment to type the solutions.
+
+\include{p01}
+\include{p02}
+\include{p03}
+\include{p04}
+\include{p05}
+\include{p06}
+\include{p07}
+\include{p08}
+\include{p09}
+\include{p10}
+\include{p11}
+
+\end{document}

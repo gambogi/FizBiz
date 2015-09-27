@@ -1,0 +1,38 @@
+\begin{problem}{\problemnum} 
+Let $\bv$ and $\bw$ be vectors in $\bbR^{n}$. If $\norm{\bv}=5$ and $\norm{\bw}=3$, what are the largest and smallest values of $\norm{\bv-\bw}$? What are the largest and smallest values of $\bv \cdot \bw$?
+\end{problem}
+\begin{solution}
+    By Cauchy-Sharz-Bunyakowski:
+    \[\abs{\bv \cdot \bw} \le \norm{\bv}\norm{\bw}\]
+    Substituting:
+    \[ 0 \le \abs{\bv \cdot \bw} \le 15 \]
+    Therefore:
+    \[ -15 \le \bv \cdot \bw \le 15 \]
+    Now:
+    \begin{align*}
+        \norm{\bv - \bw} &= \sqrt{(\bv - \bw)(\bv - \bw)}
+        \\\\
+        &= \sqrt{\bv \cdot \bv - 2(\bv \cdot \bw) + \bw \cdot \bw}
+        \\\\
+        &= \sqrt{25 - 2(\bv \cdot \bw) + 9}
+        \\\\
+        &= \sqrt{34 - 2(\bv \cdot \bw)}
+        \\\\
+        &= \sqrt{2}\sqrt{17 - \bv \cdot \bw}
+    \end{align*}
+    It follows:
+    \[  \sqrt{2}\sqrt{17 - \min(\bv \cdot \bw)}
+    \le \norm{\bv - \bw}
+    \le \sqrt{2}\sqrt{17 - \max(\bv \cdot \bw)}
+    \]
+    Substituting:
+    \[  \sqrt{2}\sqrt{17 - 15}
+    \le \norm{\bv - \bw}
+    \le \sqrt{2}\sqrt{17 + 15}
+    \]
+    Therefore:
+    \[  2\sqrt{2}
+    \le \norm{\bv - \bw}
+    \le 5\sqrt{2}
+    \]
+\end{solution}

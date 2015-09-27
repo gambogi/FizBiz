@@ -1,0 +1,152 @@
+
+\documentclass[11pt]{article}
+%%% style file you will need for some commands%%%%%%%%%%%%%%%%%%%%%%
+%% aaHWbeginner is the style file I have used to typeset many commands, feel free to use them in your solutions.
+%% bear in mind that if you need to define your command then you will have to make sure that it is not in conflict to my pre-defined command. Otherwise you will need to either use
+%% commands defined by me or edit the style file appropriately.
+
+%%\usepackage{anurag}
+\usepackage{aaHWbeginner}
+\usepackage{systeme} %% this package is to typeset system of equations.
+%%\sysdelim..  %% this is to supress the delimiters from the system of equations when using the "systeme" package
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,matrix,decorations.markings}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+%%the \circled command has been used to create text inside circle for grading table.
+\tikzstyle{blk}=[circle,inner sep=0pt,minimum size =2pt,draw,fill=black,line width=0.8pt]
+\tikzstyle{blanknode}=[circle,inner sep=2pt,minimum size =8pt,draw,line width=0.8pt]
+%%following is to have a directed edge with arrow anywhere in between, name of the style is ->- and it requres an input for the position of the arrow.
+%%requires decorations.markings library
+%% example usgae \draw[->-=0.5] (0,0) to [bend left] (2,4);
+%% see http://tex.stackexchange.com/questions/39278/tikz-arrowheads-in-the-center
+\tikzset{->-/.style={decoration={markings,mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+
+
+%%%\geometry{letterpaper, textwidth=17cm, textheight=22cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% THE FOLLOWING IS FOR THE COVER SHEET--FILL IN appropriately%%
+\newcommand{\mycourse}{MATH-241}
+\newcommand{\semesteryear}{Fall 2015}
+\newcommand{\myname}{TYPE YOUR NAME here}  %%TYPE in YOUR NAME HERE  <<<<<<<<<<<<<<<|========================================= (PLEASE PUT YOUR NAME HERE)==========
+\newcommand{\hwnumber}{3} %%TYPE in the HW  number 1,2,3,.. HERE  <<<<<<<<<<<<<<<|========================================= (PLEASE PUT the HW number here)==========
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% cover sheet preamble ends here
+
+%%%%%%%%FOLLOWING counter IS TO AUTOMATE THE NUMBERING OF THE PROBLEMS%%%%%%%%%%%%%
+\newcounter{Quesnumb}  %% this creates the counter
+\setcounter{Quesnumb}{0} %% this sets a specific value to the counter
+%%%%%% the following new command can be used to increment and print the counter  http://chenfuture.wordpress.com/2007/12/31/a-simple-counter/
+\newcommand{\problemnum}{%
+            \addtocounter{Quesnumb}{1}%
+            \arabic{Quesnumb}}
+
+
+%%%% following is NOT TO BE EDITED, DO NOT TYPE ANYTHING HERE, it will receive inputs from what you fill above%%%%%%%%%%%%%%%%%%
+\title{\textbf{\mycourse} \hfill Homework \hwnumber \hfill \textbf{\semesteryear}} %% DO NOT type in HW number,  mycourse and semesteryear values
+\author{\myname} %% DO NOT type in your name here.
+\date{ \textbf{DUE DATE Sep 29, 2015 by 11:00PM (in \textsc{Dropbox})}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0pt} %% paragraphs will not be indented
+\setlength{\parskip}{.25cm} %% space between paragraphs
+\linespread{1.1}
+
+\begin{document}
+\thispagestyle{empty} %%this is to supress the page number on the cover page
+\include{hwcover} %% make sure you have the file "hwcover.tex" in the same folder as your actual homework file
+\renewcommand{\arraystretch}{1} %% this is to make sure that array stretch in "hwcover" is nuetralized.
+
+\clearpage %% these are to reset the page number for the first page of your homework to 1.
+\pagenumbering{arabic} %% these are to reset the page number for the first page of your homework to 1.
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% YOU MAY START TYPING YOUR ANSWERS BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NOTE: In my style file aaHWbeginner.sty I have defined two environments "problem" and "solution" that can be used to type in your question and answer respectively as shown below.%%
+
+%%{\red Use the ``problem'' environment for questions and the ``solution'' environment to type the solutions.}
+
+\input{p01}
+\include{p02}
+\include{p03}
+\include{p04}
+\include{p05}
+\include{p06}
+\include{p07}
+\include{p08}
+\include{p09}
+\include{p10}
+\include{p11}
+\include{p12}
+
+\end{document}
+
+%%%\item \textbf{Section 3.1 : } 24, 30, 36
+%%\begin{center}
+%%{\sc Following problems are for \textbf{\blue PRACTICE ONLY}. No need to turn these in.}
+%%\end{center}
+%%\item Let $\bx$ be a vector such that $\bx=\bu+5\bv+12\bw$, where $\bu, \bv$ and $\bw$ are vectors in $\bbR^n$. Show that $\bx \in \text{Span}(\bu+\bv, \bv+\bw, \bw+\bu)$.
+%%
+%%\item
+%%\textbf{Linear independence and dependence} are properties of sets. So
+%%one can ask questions related to set theoretic operations. If the following statements are true then give a proof of it, otherwise give a counterexample with complete explanation of how it violates the statement.\\
+%% If $A$ and $B$ are two sets of linearly independent vectors in
+%% $\bbR^n$ then
+%% \begin{enumerate}
+%%    \item Can $A \cap B$ be linearly independent? Must it be.
+%%    \item Can $A \cup B$ be linearly independent? Must it be.
+%% \end{enumerate}
+%%
+%%\item Suppose $\bv_1, \bv_2, \bv_3, \bv_4$ are vectors in $\bbR^n$ such that $\bv_1+2\bv_2+\bv_3+\bv_4=\mathbf{0}$.
+%%\begin{enumerate}
+%%    \item If $\bw = c_1\bv_1 + c_2\bv_2 +c_3\bv_3 + c_4\bv_4$, then express $\bw$ as a linear combination of $\bv_1, \bv_2, \bv_3$ only.
+%%    \item Show that span($\bv_1,\bv_2, \bv_3) = \mbox{span}(\bv_1, \bv_2, \bv_3, \bv_4)$.
+%%\end{enumerate}
+%%
+%%\item
+%%\begin{enumerate}
+%%    \item Show that any set of $4$ vectors in $\bbR^2$ is always linearly dependent.
+%%    \item Does the same thing hold for a set of $5$ vectors? What about $3$ vectors? Do you see a general phenomenon related to the number
+%%        of solutions of a homogeneous system.
+%%    \item What is the most number of elements a linearly independent subset of $\bbR^2$ can have?
+%%\end{enumerate}
+%%
+%%\item Determine the value(s) of $a$ such that $\left\{\begin{pmatrix} 1\\ a\end{pmatrix}, \begin{pmatrix} a\\ a+2\end{pmatrix}\right\}$ is a linearly independent set.
+%%
+%%\item How many pivot columns must a $7 \times 5$ matrix have if its columns are linearly independent? Why? Will your answer change if it was $5 \times 7$ matrix? Why?
+%%\end{enumerate}
+%%
+
+%\begin{problem}{\problemnum}
+%Find the largest possible number of independent vectors among
+%\[\bv_1=
+%\begin{pmatrix}
+%1\\-1\\0\\0
+%\end{pmatrix}
+%\,
+%\bv_2=
+%\begin{pmatrix}
+%1\\0\\-1\\0
+%\end{pmatrix}
+%\,
+%\bv_3=
+%\begin{pmatrix}
+%1\\0\\0\\-1
+%\end{pmatrix}
+%\,
+%\bv_4=
+%\begin{pmatrix}
+%0\\1\\-1\\0
+%\end{pmatrix}
+%\,
+%\bv_5=
+%\begin{pmatrix}
+%0\\1\\0\\-1
+%\end{pmatrix}
+%\,
+%\bv_6=
+%\begin{pmatrix}
+%0\\0\\1\\-1
+%\end{pmatrix}
+%\]
+%\end{problem}

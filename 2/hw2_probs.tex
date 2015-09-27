@@ -1,0 +1,274 @@
+\documentclass[11pt]{article}
+%%% style file you will need for some commands%%%%%%%%%%%%%%%%%%%%%%
+%% aaexam is the style file I have used to typeset many commands, feel free to use them in your solutions.
+%% bear in mind that if you need to define your command then you will have to make sure that it is not in conflict to my pre-defined command. Otherwise you will need to either use
+%% commands defined by me or edit the style file appropriately.
+
+%%\usepackage{anurag}
+\usepackage{aaHWbeginner}
+\usepackage{systeme} %% this package is to typeset system of equations.
+%%\sysdelim..  %% this is to supress the delimiters from the system of equations when using the "systeme" package
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,matrix,decorations.markings}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+%%the \circled command has been used to create text inside circle for grading table.
+\tikzstyle{blk}=[circle,inner sep=0pt,minimum size =2pt,draw,fill=black,line width=0.8pt]
+\tikzstyle{blanknode}=[circle,inner sep=2pt,minimum size =8pt,draw,line width=0.8pt]
+%%following is to have a directed edge with arrow anywhere in between, name of the style is ->- and it requres an input for the position of the arrow.
+%%requires decorations.markings library
+%% example usgae \draw[->-=0.5] (0,0) to [bend left] (2,4);
+%% see http://tex.stackexchange.com/questions/39278/tikz-arrowheads-in-the-center
+\tikzset{->-/.style={decoration={markings,mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+
+
+%%%\geometry{letterpaper, textwidth=17cm, textheight=22cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% THE FOLLOWING IS FOR THE COVER SHEET--FILL IN appropriately%%
+\newcommand{\mycourse}{MATH-241}
+\newcommand{\semesteryear}{Fall 2015}
+\newcommand{\myname}{TYPE YOUR NAME here}  %%TYPE in YOUR NAME HERE  <<<<<<<<<<<<<<<|========================================= (PLEASE PUT YOUR NAME HERE)==========
+\newcommand{\hwnumber}{2} %%TYPE in the HW  number 1,2,3,.. HERE  <<<<<<<<<<<<<<<|========================================= (PLEASE PUT the HW number here)==========
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% cover sheet preamble ends here
+
+%%%%%%%%FOLLOWING counter IS TO AUTOMATE THE NUMBERING OF THE PROBLEMS%%%%%%%%%%%%%
+\newcounter{Quesnumb}  %% this creates the counter
+\setcounter{Quesnumb}{0} %% this sets a specific value to the counter
+%%%%%% the following new command can be used to increment and print the counter  http://chenfuture.wordpress.com/2007/12/31/a-simple-counter/
+\newcommand{\problemnum}{%
+            \addtocounter{Quesnumb}{1}%
+            \arabic{Quesnumb}}
+
+
+%%%% following is NOT TO BE EDITED, DO NOT TYPE ANYTHING HERE, it will receive inputs from what you fill above%%%%%%%%%%%%%%%%%%
+\title{\textbf{\mycourse} \hfill Homework \hwnumber \hfill \textbf{\semesteryear}} %% DO NOT type in HW number,  mycourse and semesteryear values
+\author{\myname} %% DO NOT type in your name here.
+\date{ \textbf{DUE DATE Sep 22, 2015 by 11:00PM (in \textsc{Dropbox})}}} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0pt} %% paragraphs will not be indented
+\setlength{\parskip}{.25cm} %% space between paragraphs
+\linespread{1.1}
+
+\begin{document}
+\thispagestyle{empty} %%this is to supress the page number on the cover page
+\include{hwcover} %% make sure you have the file "hwcover.tex" in the same folder as your actual homework file
+\renewcommand{\arraystretch}{1} %% this is to make sure that array stretch in "hwcover" is nuetralized.
+
+\clearpage %% these are to reset the page number for the first page of your homework to 1.
+\pagenumbering{arabic} %% these are to reset the page number for the first page of your homework to 1.
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% YOU MAY START TYPING YOUR ANSWERS BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NOTE: In my style file aaHWbeginner.sty I have defined two environments "problem" and "solution" that can be used to type in your question and answer respectively as shown below.%%
+
+%%{\red Use the ``problem'' environment for questions and the ``solution'' environment to type the solutions.}
+
+\begin{problem}{\problemnum \, \textsf{(POOLE 2.2.14)}}
+
+\end{problem}
+
+\begin{problem}{\problemnum \, \textsf{(POOLE 2.2.18)}}
+
+\end{problem}
+
+\begin{problem}{\problemnum \, \textsf{(POOLE 2.2.28)}}
+
+\end{problem}
+
+\begin{problem}{\problemnum \, \textsf{(POOLE 2.2.36)}}
+
+\end{problem}
+
+\begin{problem}{\problemnum \, \textsf{(POOLE 2.2.48)}}
+
+\end{problem}
+
+\begin{problem}{\problemnum}
+In class we learnt how to use projections to find the distance of a point to a line or a point to a plane (you may also want to see \textbf{example 1.32 and 1.33}) in your textbook. Here we want to use similar ideas by finding the (perpendicular) distance between two lines.
+
+Suppose we are given two lines $L_1$ and $L_2$ as follows:
+\[\br_1=\begin{bmatrix}1\\0\\-2 \end{bmatrix}+s\begin{bmatrix}4\\1\\3 \end{bmatrix} \qquad \text{ and } \qquad \br_2=\begin{bmatrix}2\\-1\\0\end{bmatrix}+t\begin{bmatrix}2\\1\\0\end{bmatrix}.\]
+To find the distance between these two lines we will follow the following recipe:
+\begin{enumerate}
+\item First find a vector $\mathbf{n}=(a,b,c)$ that is orthogonal to the direction vectors of both the lines. 
+\item Then choose an arbitrary point $P$ on $L_1$ and an arbitrary point $Q$ on $L_2$. Find the vector $\overrightarrow{PQ}$.
+\item Now use appropriate projections to find the distance between the two lines. 
+\end{enumerate} 
+\textsf{\red NOTE:} This technique cannot work in higher dimensions ($\geq 4$) because (as we have seen previously) for dimensions $\geq 4$, the vector $\mathbf{n}$ need not be unique.
+\end{problem}
+
+\begin{problem}{\problemnum}
+Consider the system of equations:
+\systeme[xyzw]{-w+2y+x=a, 2x+z= b, x+6y-z-3w=c} %%% systeme will specify variables alphabetically but by putting the optional [xyzw] we can specify the order of variables
+\begin{enumerate}
+	\item The \textsf{row picture} of this system can be described as the intersection of \textbf{three 3D hyperplanes} in the 4D space. How will you describe the \textsf{column picture} of this system?
+	\item Find the condition on the parameters $a, b \textrm{ and } c$ so that the system is consistent.
+	\item Does the system have a solution when $a=3, b=1$ and $c=-1$? If yes, then find the solution in vector form.
+	\item Does the system have a solution when $a=0, b=1$ and $c=-1$? If yes, then find the solution in vector form.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{\problemnum}
+Consider the following augmented matrix of a system of equations:
+\[
+ \left[
+     \begin{array}{rrr|r}
+       1 & 2 & -3 &     4\\
+       3 & -1 & 5 &     2\\
+       4 & 1 & a^2-14 & a+2
+     \end{array}
+   \right]
+\]
+\begin{enumerate}
+	\item Find the values of $a$ for which the matrix will have no pivots, one pivot, two pivots and three pivots.
+	\item Based on your answers to the previous part, find the values of $a$ for which the system has NO solutions?
+\textbf{exactly one} solution? \textbf{infinitely} many solutions?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{\problemnum}
+Determine the value(s) of $x$ for which the rank of the following matrix is \textbf{minimum}. 
+\[
+A = \begin{bmatrix}
+         3&1&1&4\\
+         x&4&10&1\\
+         1&7&17&3\\
+         2&2&4&3
+    \end{bmatrix}
+\]
+\end{problem}
+
+\begin{problem}{\problemnum}
+Consider the following augmented matrix of a system of equations:
+\[[\bA | \bb]=
+ \left[
+     \begin{array}{rrr|r}
+       1 & 2 & 1 & 3\\
+       0 & x & 5 & 10\\
+       2 & 7 & x & y
+     \end{array}
+   \right]
+\]
+\begin{enumerate}
+	\item Find all the values of $x$ and $y$ for which the \textbf{augmented matrix} $[\bA | \bb]$ has exactly two pivots.
+	\item Find the values of $x$ for which the system has a unique solution.
+    \item Find those pairs $(x,y)$ for which the system has more than one solution.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{\problemnum} 
+Answer the following:
+	\begin{enumerate}
+	\item If possible, give an example of a $3 \times 4$ matrix $\bA$ and $3 \times 1$ columns $\bb$ and $\bc$ such that $[\bA | \bb]$ is an augmented matrix for an inconsistent system but $[\bA | \bc]$ is an augmented matrix for a consistent system.
+	\item Suppose a system of linear equation has $3 \times 5$ \textsf{augmented matrix} whose fifth column is a pivot column. Is the system consistent? (give reasons for your answer).
+	\item Suppose a system of linear equation has $3 \times 5$ \textsf{coefficient matrix} with three pivot columns. Is the system consistent? (give reasons for your answer).
+	\end{enumerate}
+\end{problem}
+	
+\begin{problem}{\problemnum}
+    \begin{enumerate}
+    \item Suppose $\bA$ is a matrix such that $[\bA|\bu]$ and $[\bA|\bv]$ are both CONSISTENT systems. Show that $[\bA|(\bu+\bv)]$ is also a consistent system. \textit{(Hint: think in terms of column picture.)}
+    \item Let \[\bu =
+          \begin{bmatrix}
+            0 \\
+            2 \\
+            4 \\
+            6 \\
+          \end{bmatrix}
+        \qquad
+    \bv =        \begin{bmatrix}
+          1 \\
+          3 \\
+          5 \\
+          7 \\
+        \end{bmatrix}
+    \]
+Suppose $\bA$ is a matrix such that $[\bA|\bu]$ and $[\bA|\bv]$ are both INCONSISTENT systems. Is it possible that $[\bA|(\bu+\bv)]$ is a consistent system with infinitely many solutions.
+If ``YES'', then give an example of such a matrix $\bA$ and show that it satisfies all the conditions given. If ``NO'', then give a reason why would such a matrix $\bA$ not exist.
+\end{enumerate}
+\end{problem}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{problem}{\problemnum}
+%If the matrix
+%\[
+%A = \begin{bmatrix}
+%         a & 1 & a & 0 & 0 & 0\\
+%         0 & b & 1 & b & 0 & 0\\
+%         0 & 0 & c & 1 & c & 0\\
+%         0 & 0 & 0 & d & 1 & d
+%    \end{bmatrix}
+%\]
+%has rank $r$, prove that:
+%\begin{enumalph}
+%    \item For all values of $a,b,c$, the rank $r \geq 3$.
+%    \item $r=3$ if and only if $a=d=0$ and $bc=1$. \textsf{NOTE: ``if and only if'' means the statement is true both ways and hence you should prove both the statement and its converse.}
+%    \item $r=4$ in all other cases.
+%\end{enumalph}
+%\end{problem}
+
+%\begin{center}
+%{\sc Following problems are for \textbf{\blue PRACTICE ONLY}. No need to turn these in.}
+%\end{center}
+%
+%\item Describe the intersection of the three planes $u+v+w+z=6$ and $u+w+z=4$ and $u+w=2$ (all in 4D). Is it a line or a point or an empty set? What is the intersection if the fourth plane $u=-1$ is included? Find a fourth equation that leaves us with no solution.
+%
+%\item \textbf{Section 1.3 : } 7, 13, 19, 23
+%
+%\item \textbf{Section 2.1 : } 23, 36
+%
+%\item \textbf{Section 2.2 : } 13, 15, 17, 29, 33, 37, 43, 49, 55
+%
+%\item Prove that the following two matrices are NOT row equivalent\\
+%\[
+%\left[
+%  \begin{array}{rrr}
+%    2 & 0 & 0 \\
+%    a & -1 & 0\\
+%    b & c & 3
+%  \end{array}
+%\right]
+%\qquad
+%\left[
+%  \begin{array}{rrr}
+%    1 & 1 & 2 \\
+%    -2 & 0 & -1\\
+%    1 & 3 & 5
+%  \end{array}
+%\right]
+%\]
+%
+%\item Forward elimination changes $\bA\bx = \bb$ to a row reduced $\mathbf{R}\bx = \mathbf{d}$: the complete solution is
+%\[
+%\bx=\begin{bmatrix}4\\0\\0\end{bmatrix}+c_1\begin{bmatrix}2\\1\\0\end{bmatrix}+c_2\begin{bmatrix}5\\0\\1\end{bmatrix}
+%\]
+%\begin{enumerate}
+%	\item What is the $3 \times 3$ reduced row echelon matrix $\mathbf{R}$ and what is $\mathbf{d}$?
+%	\item If the process of elimination subtracted 3 times row 1 from row 2 and
+%		then 5 times row 1 from row 3, what matrix connects $\mathbf{R}$ and $\mathbf{d}$ to the original $\bA$ and
+%		$\bb$? Use this matrix to find $\bA$ and $\bb$.
+%\end{enumerate}

@@ -1,0 +1,46 @@
+%% this file is for LaTeX users
+%% the \include{hwcover} in the preamble of your HW file takes this file as an input and renders all the information appropriately.
+%% this file should be in the same directory as your HW files.
+%% DO NOT type your name etc. here in this file. See the preamble of your HW template file, where you need to write those inputs.
+\newcommand{\circlescale}{& \circled{5} \hspace*{0.2cm} \circled{4} \hspace*{0.2cm} \circled{3} \hspace*{0.2cm} \circled{2} \hspace*{0.2cm} \circled{0}\\\midrule}
+\begin{minipage}{6in}
+    {\Large \mycourse \hfill Linear Algebra \hfill \semesteryear}
+    \begin{center}
+    %%\textsf{\huge Cover Sheet for HW}\\
+    %%\vspace*{0.3cm}
+    \fbox{\parbox[][1cm][c]{10cm}{\sc \Large Print Name: \myname}}
+    \end{center}
+\end{minipage}
+\vspace*{0.3cm}
+
+\textbf{Read the instructions below:}
+\begin{itemize}
+    %%\item \textsf{STAPLE} your homework.
+    \item Solutions should be supported with reasons. Just writing the numerical answers is not enough and NO credit will be given for that.
+    \item Please submit both the \LaTeX and PDF files. Refer to the instructions on the HW page about submitting the homework .
+\end{itemize}
+
+\begin{center}
+\fbox{\parbox[][0.8cm][c]{10cm}{{\sc Assignment \# \hwnumber}}}
+\end{center}
+
+%%%for the \circled command used below see the file hw_template.tex. I have used TikZ to do this.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lc}
+  \toprule[2pt]
+  % after \\: \midrule or \cline{col1-col2} \cline{col3-col4} ...
+  \multicolumn{2}{c}{\bfseries For Grading Only}\\ \toprule[2pt]
+  Completion Points \circlescale
+  \#1               \circlescale
+  \#2               \circlescale
+  \#3               \circlescale
+  \#4               \circlescale
+  \#5               \circlescale
+  \#6               \circlescale
+  \#7               \circlescale
+  \#8               \circlescale
+  \#9               \circlescale
+  \textbf{Total} & \\
+  \bottomrule[2pt]
+\end{tabular}

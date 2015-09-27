@@ -1,0 +1,39 @@
+\begin{problem}{\problemnum \, \textsf{(POOLE 1.2.62)}(a)}\\
+	Prove that $\norm{\bu+\bv}^{2} + \norm{\bu-\bv}^{2} = 2\norm{\bu}^{2} + 2\norm{\bu}^{2}$
+	$\forall \text{ vectors } \bu, \bv \in \mathbb{R}^{n}$
+\end{problem}
+\begin{solution}
+	\begin{proof}
+
+        \[\norm{\bu + \bv}^{2} + \norm{\bu - \bv}^{2}
+          = 2\norm{\bu}^{2} + 2\norm{\bu}^{2}
+        \]
+        By the definition of the norm:
+        \[
+            \sqrt{(\bu + \bv) \cdot (\bu + \bv)}^{2}
+            + \sqrt{(\bu - \bv) \cdot (\bu - \bv)}^{2}
+            = 2\norm{\bu}^{2} + 2\norm{\bu}^{2}
+        \]
+        By the distributive property:
+        \[
+            \sqrt{ \bu \cdot \bu + 2(\bu \cdot \bv) + \bv \cdot \bv }^{2}
+            + \sqrt{ \bu \cdot \bu - 2(\bu \cdot \bv) + \bv \cdot \bv }^{2}
+            = 2\norm{\bu}^{2} + 2\norm{\bu}^{2}
+        \]
+        Combining terms:
+        \[
+            2(\bu \cdot \bu) + 2(\bv \cdot \bv)
+            = 2\norm{\bu}^{2} + 2\norm{\bu}^{2}
+        \]
+        By raising each term to the $\frac{2}{2}^{\text{th}}$:
+        \[
+            2\sqrt{\bu \cdot \bu}^{2} + 2\sqrt{\bv \cdot \bv}^{2}
+            = 2\norm{\bu}^{2} + 2\norm{\bu}^{2}
+        \]
+        Again, using the definition of the norm:
+        \[
+              2\norm{\bu}^{2} + 2\norm{\bu}^{2}
+            = 2\norm{\bu}^{2} + 2\norm{\bu}^{2}
+        \]
+    \end{proof}
+\end{solution}
